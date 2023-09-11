@@ -1,0 +1,14 @@
+name: build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ui-test:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout UI testing code
+      uses: actions/checkout@v2
+      with:
+        repository: rupeshkush/mywebapp
+        token: ${{ secrets.TEST_TOKEN }}
